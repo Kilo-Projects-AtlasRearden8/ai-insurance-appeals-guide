@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Prompt Templates | AI Insurance Appeals Guide</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<header>
+  <div class="header-inner">
+    <div class="logo">
+      <a href="index.html">AI Insurance Appeals Guide<span class="logo-tag">&#8226; Asdale Dynamics, LLC</span></a>
+    </div>
+    <nav>
+      <a href="index.html">Overview</a>
+      <a href="eobs.html">Reading EOBs</a>
+      <a href="evidence.html">Gathering Evidence</a>
+      <a href="appeals.html">Appeal Letters</a>
+      <a href="deadlines.html">Tracking Deadlines</a>
+      <a href="ai-safety.html">Using AI Safely</a>
+      <a href="prompts.html" class="active">AI Prompts</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main-content">
+  <section class="section">
+    <h1>AI Prompt Templates</h1>
+    <p>Copy-and-paste prompt templates for every step of the appeals process. All personal details should be masked before sharing with any AI tool.</p>
+
+    <div class="callout callout-warn">
+      <strong>Privacy reminder:</strong> Never share your full Social Security Number, member ID, claim numbers (mask middle digits), full address, phone number, or detailed medical conditions with any AI tool. Replace them with placeholders like <code>[Patient]</code>, <code>[Redacted]</code>, or <code>XXXX[[MASKED]]1234</code>.
+    </div>
+
+    <h2>1. Reading an Explanation of Benefits (EOB)</h2>
+    <p><strong>When to use:</strong> After you have received an EOB with a denial or adjustment.</p>
+    <div class="prompt-block">
+      <h3>Prompt</h3>
+      <pre>
+I received the following Explanation of Benefits (EOB) text from my insurance
+company. Personal details have been masked. Please help me identify:
+
+1. The claim number.
+2. The date of service (start and end if applicable).
+3. The denial reason code(s) and what each means in plain English.
+4. The total billed amount, insurer-paid amount, and patient responsibility.
+5. Whether this appears to be a full denial, partial denial, or no denial.
+6. Any appeal deadline mentioned in the text.
+
+EOB text:
+---
+[Paste your sanitized EOB text here]
+---
+
+Please return the results as a table with columns: Item | Detail | Notes.
+If you cannot determine something from the text, say "Not shown" instead of
+guessing. Do not invent dates, codes, or amounts.
+      </pre>
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy to clipboard</button>
+    </div>
+    <p class="prompt-source">Source: <code>docs/prompts/eob-reading-prompt.md</code></p>
+
+    <h2>2. Evidence Checklist Generator</h2>
+    <p><strong>When to use:</strong> After you have read your EOB and identified the denial code.</p>
+    <div class="prompt-block">
+      <h3>Prompt</h3>
+      <pre>
+I am appealing an insurance denial and need an evidence checklist. Here are
+the facts:
+
+- Service: [brief description of the medical service]
+- Date of service: [date]
+- Denial code: [CODE] — [plain English meaning]
+- Denied amount: $[amount]
+- Evidence I already have: [list what you have]
+- Evidence I still need: [list what you think you need]
+
+Please generate a simple checklist table with these columns:
+  1. Document (name)
+  2. What it proves
+  3. Where to get it
+  4. Have it? (Yes/No/Partial)
+  5. Notes
+
+Keep the language simple and beginner-friendly. Do not include legal advice
+or guarantee that collecting these documents will result in approval. Use
+placeholders like [Provider Name] where personal details would go.
+      </pre>
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy to clipboard</button>
+    </div>
+    <p class="prompt-source">Source: <code>docs/prompts/evidence-checklist-prompt.md</code></p>
+
+    <h2>3. Appeal Letter Drafting</h2>
+    <p><strong>When to use:</strong> After you have gathered your evidence and want to turn your bullet points into a professional appeal letter.</p>
+    <div class="prompt-block">
+      <h3>Prompt</h3>
+      <pre>
+I need to write an insurance appeal letter. Here are the facts (all personal
+details replaced with placeholders):
+
+- Patient name: [Patient]
+- Member ID: [XXXXXXXX]
+- Claim number: [CLM-number]
+- Date of service: [Month DD, YYYY]
+- Denial code: [CODE] — [plain English meaning]
+- Denied amount: $[amount]
+- Patient responsibility: $[amount]
+- Why I believe the denial was wrong: [1-2 sentences in your own words]
+- Evidence I am attaching: [bullet list of documents]
+
+Please write a complete, professional appeal letter following this structure:
+
+1. Return address block (placeholders)
+2. Date
+3. Insurance company name and claims address
+4. Subject line: "RE: Appeal of Claim Denial — Claim #[number] — Member #[ID]"
+5. Member ID, claim number, date of service, denial code (in the first paragraph)
+6. Statement of disagreement (one sentence: "I disagree with the denial...")
+7. Summary of the issue (factual, 2-4 sentences)
+8. Argument (why the denial was wrong, supported by the attached evidence)
+9. List of enclosed documents
+10. Specific request (e.g., "reprocess and reverse the denial")
+11. Signature line
+
+Keep the tone factual, respectful, and beginner-friendly. Do not add facts I
+did not provide. Do not invent case law, statutes, or denial-code meanings.
+Replace all personal details with placeholders like [Your Name].
+      </pre>
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy to clipboard</button>
+    </div>
+    <p class="prompt-source">Source: <code>docs/prompts/appeal-letter-prompt.md</code></p>
+
+    <h2>4. Medical Bill Dispute Letter Drafting</h2>
+    <p><strong>When to use:</strong> After you have reviewed your bill and EOB side by side and identified a discrepancy.</p>
+    <div class="prompt-block">
+      <h3>Prompt</h3>
+      <pre>
+I need to write a medical bill dispute letter. Here are the facts (all personal
+details replaced with placeholders):
+
+- Patient name: [Patient]
+- Member ID: [XXXXXXXX]
+- Claim number: [CLM-number]
+- Date of service: [Month DD, YYYY]
+- Provider name: [Provider]
+- Billed amount: $[amount]
+- Amount I was billed: $[amount]
+- Amount my insurer paid (per EOB): $[amount]
+- Amount I believe I owe: $[amount]
+- Reason for the dispute: [brief explanation, e.g., "billed full price instead
+  of negotiated rate" or "billed for a service not received"]
+- Evidence I am attaching: [bullet list]
+
+Please write a complete, professional medical bill dispute letter following
+this structure:
+
+1. Return address block (placeholders)
+2. Date
+3. Provider billing department name and address
+4. Subject line: "RE: Bill Dispute — Account #[number] — Date of Service [date]"
+5. Account number, date of service, billed amount (in the first paragraph)
+6. Statement of dispute (one sentence: "I dispute this bill because...")
+7. Summary of the issue (factual, 2-4 sentences)
+8. Comparison table: billed amount vs. insurer-paid vs. what I owe
+9. Evidence attached
+10. Specific request (e.g., "correct the bill and issue a revised statement")
+11. Signature line
+
+Keep the tone factual and respectful. Do not add facts I did not provide. Use
+placeholders like [Your Name] for personal details.
+      </pre>
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy to clipboard</button>
+    </div>
+    <p class="prompt-source">Source: <code>docs/prompts/dispute-letter-prompt.md</code></p>
+
+    <h2>5. Deadline Tracker Template</h2>
+    <p><strong>When to use:</strong> After you have one or more denied claims and want to organize their deadlines.</p>
+    <div class="prompt-block">
+      <h3>Prompt</h3>
+      <pre>
+I need to track deadlines for insurance appeals. I have [number] denied
+claims. Please generate:
+
+1. A markdown table with columns:
+   - Claim Number
+   - Denial/EOB Date
+   - Appeal Deadline (calculate as EOB date + 180 days, shown as YYYY-MM-DD)
+   - Days Remaining (as a formula explanation)
+   - Status (Draft / Submitted / Awaiting Decision)
+   - Notes
+2. Conditional formatting guidance: how to highlight rows where the deadline
+   is overdue (past) or approaching within 14 days.
+3. Calendar reminder text I can copy into Google Calendar or another app:
+   one event per claim, scheduled on the deadline date, plus a reminder event
+   14 days before each deadline.
+4. A short "good cause" paragraph I can adapt if I miss a deadline.
+
+Use placeholder claim numbers like [CLM-XXXXX] and today's date as [YYYY-MM-DD]
+so I can fill in real values myself.
+      </pre>
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy to clipboard</button>
+    </div>
+    <p class="prompt-source">Source: <code>docs/prompts/deadline-tracker-prompt.md</code></p>
+
+    <h2>How to use these prompts</h2>
+    <ol>
+      <li>Open your preferred AI tool (local or cloud).</li>
+      <li>Copy the prompt from the box above (click "Copy to clipboard").</li>
+      <li>Replace the bracketed placeholders with your own facts.</li>
+      <li>Review and edit the AI output carefully before using it.</li>
+      <li>Save the final result with a dated filename.</li>
+    </ol>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <p class="copyright">Copyright (c) 2026 Asdale Dynamics, LLC. MIT License.</p>
+  </div>
+</footer>
+
+<script>
+function copyPrompt(btn) {
+  const pre = btn.previousElementSibling;
+  const text = pre.textContent;
+  navigator.clipboard.writeText(text).then(() => {
+    const original = btn.textContent;
+    btn.textContent = "Copied!";
+    setTimeout(() => { btn.textContent = original; }, 1500);
+  });
+}
+</script>
+
+</body>
+</html>

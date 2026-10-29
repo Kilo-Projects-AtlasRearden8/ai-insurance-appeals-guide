@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Step 5: Using AI Safely | AI Insurance Appeals Guide</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<header>
+  <div class="header-inner">
+    <div class="logo">
+      <a href="index.html">AI Insurance Appeals Guide<span class="logo-tag">&#8226; Asdale Dynamics, LLC</span></a>
+    </div>
+    <nav>
+      <a href="index.html">Overview</a>
+      <a href="eobs.html">Reading EOBs</a>
+      <a href="evidence.html">Gathering Evidence</a>
+      <a href="appeals.html">Appeal Letters</a>
+      <a href="deadlines.html">Tracking Deadlines</a>
+      <a href="ai-safety.html" class="active">Using AI Safely</a>
+      <a href="prompts.html">AI Prompts</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main-content">
+  <section class="section">
+    <h1>Step 5: Using AI Safely and Ethically</h1>
+    <p>AI is a powerful drafting assistant &#8212; but it is not a doctor, a lawyer, or an insurance expert. This page explains how to use AI effectively while staying safe, truthful, and within bounds.</p>
+
+    <h2>AI is a tool, not an authority</h2>
+    <p>Never treat AI output as a final answer. Always verify:</p>
+    <table>
+      <thead>
+        <tr><th>What AI produced</th><th>What you should do</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>A denial-code explanation</td><td>Look it up in the insurer's official code list.</td></tr>
+        <tr><td>A quote from your plan</td><td>Check the PDF of your plan document.</td></tr>
+        <tr><td>Legal terminology</td><td>Consult your state insurance department or an attorney.</td></tr>
+        <tr><td>A deadline calculation</td><td>Confirm against the denial letter or your state regulations.</td></tr>
+        <tr><td>A medical necessity argument</td><td>Have your doctor review it.</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Privacy: What to share (and what never to share)</h2>
+
+    <div class="callout callout-warn">
+      <strong>NEVER share this with any AI tool:</strong>
+      <ul>
+        <li>Your full Social Security Number.</li>
+        <li>Your member ID or claim numbers (mask the middle digits).</li>
+        <li>Your full address or phone number (use a generic placeholder).</li>
+        <li>The names of other people in your household.</li>
+        <li>Detailed medical conditions (use codes, not descriptions, when possible).</li>
+        <li>Bank account or payment information.</li>
+      </ul>
+    </div>
+
+    <h3>Safe inputs:</h3>
+    <ul>
+      <li>The denial code (e.g., "CO-45") and its public meaning.</li>
+      <li>The type of service (e.g., "MRI lumbar spine without contrast").</li>
+      <li>General timeline facts (e.g., "EOB received October 20, service date October 5").</li>
+      <li>The structure of your argument (not the specific personal details).</li>
+    </ul>
+
+    <div class="callout callout-info">
+      <strong>Best practice:</strong> When using AI, replace personal details with placeholders:
+    </div>
+    <pre>
+Member ID: XXXXXX[[MASKED]]
+Name: [Patient]
+Address: [Redacted]
+    </pre>
+    <p>Then fill in the real values yourself when you assemble the final letter.</p>
+
+    <h2>Using local AI (no internet, no data sharing)</h2>
+    <p>If you prefer to keep everything private, you can run AI models locally on your computer. No data leaves your machine.</p>
+
+    <table>
+      <thead>
+        <tr><th>Tool</th><th>What it does</th><th>Skill level</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>LM Studio</strong></td><td>Runs many open-source models locally with a friendly GUI</td><td>Beginner</td></tr>
+        <tr><td><strong>Ollama</strong></td><td>Command-line tool for downloading and running LLMs locally</td><td>Intermediate</td></tr>
+        <tr><td><strong>GPT4All</strong></td><td>Desktop app with offline models</td><td>Beginner</td></tr>
+      </tbody>
+    </table>
+
+    <h3>What you need</h3>
+    <ul>
+      <li>At least 8 GB of RAM (16 GB recommended).</li>
+      <li>At least 4 GB of free disk space for a small model (7&#8211;15 GB for larger ones).</li>
+      <li>A modern CPU (an Apple Silicon Mac, AMD Ryzen, or Intel i5+ works fine).</li>
+    </ul>
+
+    <h3>Quick start with LM Studio</h3>
+    <ol>
+      <li>Download LM Studio from <a href="https://lmstudio.ai" target="_blank" rel="noopener">lmstudio.ai</a>.</li>
+      <li>Install and open it.</li>
+      <li>Browse the "Models" tab and download a lightweight model like <code>Phi-3-mini-4k-instruct</code> or <code>Llama-3-8B-Instruct</code>.</li>
+      <li>In the "Chat" tab, paste your prompt and hit send.</li>
+    </ol>
+    <p>Local models produce slightly lower-quality output than cloud models, but for drafting appeal letters, they are more than sufficient &#8212; and they never send your data anywhere.</p>
+
+    <h2>Cloud AI: When and how</h2>
+    <p>Cloud models (ChatGPT, Claude, Gemini) produce higher-quality text. Use them when:</p>
+    <ul>
+      <li>You have stripped all personally identifiable information (PII).</li>
+      <li>You are using a business or enterprise-tier account with a data-usage agreement you have read.</li>
+      <li>You are only using the output as a draft to edit yourself.</li>
+    </ul>
+    <div class="callout callout-warn">
+      <strong>Never</strong> input raw medical records, full SSNs, or claim numbers into a free consumer AI chat.
+    </div>
+
+    <h2>How to prompt AI for appeal-writing</h2>
+    <p>The quality of AI output depends heavily on the prompt. Here is a framework:</p>
+
+    <h3>GOOD prompt:</h3>
+    <pre>
+"I need to draft an insurance appeal letter. Here are the facts: [bullet
+list of facts]. The denial code is [CODE] with the meaning [description].
+I have attached [list of evidence]. Please write a professional appeal
+letter following this structure: [list the sections]. Keep the tone
+factual and respectful. Replace all personal details with placeholders
+like [Your Name]."
+    </pre>
+
+    <h3>BAD prompt:</h3>
+    <pre>
+"Write an insurance appeal for me."
+    </pre>
+    <p>The bad prompt produces a generic template with no real facts. AI cannot fill in details you never gave it.</p>
+
+    <h2>Common AI mistakes and how to catch them</h2>
+    <table>
+      <thead>
+        <tr><th>Mistake</th><th>How to catch it</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Fabricating case law</td><td>AI sometimes cites non-existent court cases. If it mentions a specific law or case, Google it or look it up yourself.</td></tr>
+        <tr><td>Inventing denial-code meanings</td><td>AI may misstate what a code means. Always check the insurer's official code list.</td></tr>
+        <tr><td>Overstating medical necessity</td><td>AI may write that a service is "clearly medically necessary" without evidence. Tone down absolute claims.</td></tr>
+        <tr><td>Adding fake evidence</td><td>AI may list documents you do not actually have. Remove any attachment references that are not real.</td></tr>
+        <tr><td>Missing the deadline</td><td>AI may compute 180 days incorrectly. Double-check with a calendar.</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Checklist: Before you send anything</h2>
+    <ul class="checklist">
+      <li>I have removed or masked all PII (SSN, full address, claim numbers).</li>
+      <li>Every fact in the letter matches my actual documents.</li>
+      <li>Every cited denial code is verified against the insurer's official list.</li>
+      <li>The deadline date is calculated and confirmed by a calendar.</li>
+      <li>My physician (if involved) has reviewed the medical-necessity language.</li>
+      <li>I have signed the letter (physically or typed name for online submission).</li>
+      <li>I have saved a dated copy of everything I send.</li>
+    </ul>
+
+    <h2>Where to get help</h2>
+    <p>If you need more support than AI can provide:</p>
+    <ul>
+      <li><strong>State insurance commissioner</strong> &#8212; Free help with disputes and appeals.</li>
+      <li><strong>Patient advocate</strong> &#8212; Many hospitals have advocates who help with billing.</li>
+      <li><strong>Local legal aid</strong> &#8212; Free or low-cost legal help for healthcare-related issues.</li>
+      <li><strong>Your provider's billing office</strong> &#8212; They often handle appeals on your behalf.</li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <p class="copyright">Copyright (c) 2026 Asdale Dynamics, LLC. MIT License.</p>
+  </div>
+</footer>
+
+</body>
+</html>
